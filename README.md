@@ -30,8 +30,6 @@ portfolio/
     └── lib/                 ← fonts + helpers
 ```
 
-Full layout in `docs/architecture.md`.
-
 ---
 
 ## Develop
@@ -46,23 +44,6 @@ npm run build
 
 ---
 
-## Implementation status
-
-Project is mid-port. The design system is complete in
-`design-system/`; the Next.js project is being built out per
-`docs/implementation-plan.md`.
-
-To understand the project, read in this order:
-
-1. `docs/positioning.md` — what the site is for
-2. `docs/stack.md` — what's in
-3. `docs/architecture.md` — where the code lives
-4. `docs/implementation-plan.md` — ordered slices to ship
-
-To work in the repo, read `CLAUDE.md` first.
-
----
-
 ## Deploy
 
 Vercel project linked to `main`. Push to deploy.
@@ -74,3 +55,4 @@ Initial setup: `vercel` from the repo root after first `npm install`.
 ## Contact
 
 tburk83@gmail.com · [LinkedIn](https://www.linkedin.com/in/trevorburkholder/)
+
