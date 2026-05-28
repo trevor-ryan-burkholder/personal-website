@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Section background rhythm</title>
+<style>
+@import url("../colors_and_type.css");
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: #FBF8F4;
+  color: #14110F;
+  font-family: "Inter", -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body { padding: 24px 28px; min-height: 100vh; }
+:root {
+  --crimson:#B22230; --crimson-deep:#8E1A26; --crimson-soft:#FF8B96;
+  --paper:#FBF8F4; --paper-2:#F1ECE3; --paper-3:#ECE7DC;
+  --ink:#14110F; --ink-2:#2A2520; --mute:#6A625A; --rule:#D9D2C7;
+  --green:#2F6E4E;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute); }
+.row { display:flex; gap:16px; align-items:stretch; flex-wrap:wrap; }
+.col { display:flex; flex-direction:column; gap:12px; }
+.swatch { width: 100%; height: 64px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.04); }
+.sw-meta { display:flex; justify-content:space-between; gap:8px; font-family: var(--mono); font-size: 11px; color: var(--mute); margin-top: 8px; }
+.sw-meta .name { color: var(--ink-2); font-weight:500; }
+.sw-meta .hex { color: var(--mute); }
+.tile { display:flex; flex-direction:column; }
+</style>
+</head>
+<body>
+
+<div class="eyebrow" style="margin-bottom:12px;">ALTERNATING SECTION BACKGROUNDS — NO GRADIENTS, NO IMAGES</div>
+<div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap:0; height:96px; border-radius:6px; overflow:hidden;">
+  <div style="background:#FBF8F4; display:flex; align-items:flex-end; padding:8px; font-family:var(--mono); font-size:10px; color:#6A625A;">paper</div>
+  <div style="background:#F1ECE3; display:flex; align-items:flex-end; padding:8px; font-family:var(--mono); font-size:10px; color:#6A625A;">paper-2</div>
+  <div style="background:#fff; display:flex; align-items:flex-end; padding:8px; font-family:var(--mono); font-size:10px; color:#6A625A;">white</div>
+  <div style="background:#14110F; display:flex; align-items:flex-end; padding:8px; font-family:var(--mono); font-size:10px; color:rgba(251,248,244,0.6);">ink</div>
+  <div style="background:#B22230; display:flex; align-items:flex-end; padding:8px; font-family:var(--mono); font-size:10px; color:rgba(251,248,244,0.7);">crimson</div>
+</div>
+
+</body>
+</html>
