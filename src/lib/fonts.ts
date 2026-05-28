@@ -1,9 +1,11 @@
 import localFont from "next/font/local";
-import { Fraunces } from "next/font/google";
+
+// Self-hosted brand fonts. All files live in src/fonts so the app build is
+// self-contained — no design-system dependency, no runtime Google call.
 
 // Inter — body sans. Single variable file covers all weights.
 export const inter = localFont({
-  src: "../../design-system/fonts/InterVariable.woff2",
+  src: "../fonts/InterVariable.woff2",
   variable: "--font-inter",
   weight: "100 900",
   display: "swap",
@@ -13,12 +15,12 @@ export const inter = localFont({
 export const jetbrainsMono = localFont({
   src: [
     {
-      path: "../../design-system/fonts/JetBrainsMono-Regular.woff2",
+      path: "../fonts/JetBrainsMono-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../design-system/fonts/JetBrainsMono-Medium.woff2",
+      path: "../fonts/JetBrainsMono-Medium.woff2",
       weight: "500",
       style: "normal",
     },
@@ -27,13 +29,20 @@ export const jetbrainsMono = localFont({
   display: "swap",
 });
 
-// Fraunces — display serif. Loaded via next/font/google (self-hosted at
-// build time, no runtime Google call) per docs/stack.md, until a Fraunces
-// .woff2 lands in design-system/fonts. Italic is required for the hero accent.
-export const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+// Fraunces — display serif. Variable font; italic powers the hero accent.
+export const fraunces = localFont({
+  src: [
+    {
+      path: "../fonts/Fraunces-VariableFont_SOFT_WONK_opsz_wght.ttf",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Fraunces-Italic-VariableFont_SOFT_WONK_opsz_wght.ttf",
+      weight: "100 900",
+      style: "italic",
+    },
+  ],
   variable: "--font-fraunces",
   display: "swap",
 });
