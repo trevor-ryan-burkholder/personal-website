@@ -3,7 +3,7 @@
 export const EMAIL = 'tburk83@gmail.com';
 
 export const CALENDLY_URL =
-  'https://calendly.com/trevorburkholder/30min';
+  'https://calendly.com/trevorburkholder/15-min-intro-call';
 
 export const AVAILABILITY = 'Available for new projects · June 2026';
 
