@@ -1,6 +1,6 @@
 // Site-wide constants. Source of truth for contact + scheduling links.
 
-export const EMAIL = 'tburk83@gmail.com';
+export const EMAIL = 'trevor.ryan.burkholder@pm.me';
 
 export const CALENDLY_URL =
   'https://calendly.com/trevorburkholder/15-min-intro-call';
