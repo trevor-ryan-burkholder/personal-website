@@ -1,75 +1,89 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties } from 'react';
 import {
   testimonials,
   type Testimonial,
   RECOMMENDATIONS_TOTAL,
   RECOMMENDATIONS_MORE,
   recommendationsUrl,
-} from "@/content/testimonials";
+} from '@/content/testimonials';
+import Image from 'next/image';
 
 const styles: Record<string, CSSProperties> = {
   section: { paddingTop: 88, paddingBottom: 80 },
   quote: {
     padding: 32,
-    border: "1px solid var(--rule)",
+    border: '1px solid var(--rule)',
     borderRadius: 6,
-    background: "#ffffff",
-    display: "flex",
-    flexDirection: "column",
+    background: '#ffffff',
+    display: 'flex',
+    flexDirection: 'column',
   },
   body: {
-    fontFamily: "var(--serif)",
+    fontFamily: 'var(--serif)',
     fontWeight: 400,
     fontSize: 19,
     lineHeight: 1.5,
-    color: "var(--ink)",
-    margin: "0 0 24px",
+    color: 'var(--ink)',
+    margin: '0 0 24px',
   },
-  who: { display: "flex", alignItems: "center", gap: 12, marginTop: "auto" },
+  who: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 12,
+    marginTop: 'auto',
+  },
   avatar: {
     width: 36,
     height: 36,
-    background: "var(--paper-2)",
-    borderRadius: "50%",
-    border: "1px solid var(--rule)",
+    background: 'var(--paper-2)',
+    borderRadius: '50%',
+    border: '1px solid var(--rule)',
   },
   name: { fontSize: 14, fontWeight: 500 },
   role: {
-    fontFamily: "var(--mono)",
+    fontFamily: 'var(--mono)',
     fontSize: 11,
-    color: "var(--mute)",
-    letterSpacing: "0.04em",
+    color: 'var(--mute)',
+    letterSpacing: '0.04em',
   },
   more: {
-    margin: "36px 0 0",
-    display: "flex",
-    alignItems: "baseline",
-    justifyContent: "space-between",
-    padding: "18px 0 0",
-    borderTop: "1px solid var(--rule)",
+    margin: '36px 0 0',
+    display: 'flex',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
+    padding: '18px 0 0',
+    borderTop: '1px solid var(--rule)',
   },
   count: {
-    fontFamily: "var(--mono)",
+    fontFamily: 'var(--mono)',
     fontSize: 12,
-    color: "var(--mute)",
-    letterSpacing: "0.06em",
-    textTransform: "uppercase",
+    color: 'var(--mute)',
+    letterSpacing: '0.06em',
+    textTransform: 'uppercase',
   },
-  countStrong: { color: "var(--ink)", fontWeight: 600 },
+  countStrong: { color: 'var(--ink)', fontWeight: 600 },
   link: {
     fontSize: 14,
-    color: "var(--crimson)",
-    borderBottom: "1px solid var(--crimson)",
+    color: 'var(--crimson)',
+    borderBottom: '1px solid var(--crimson)',
     paddingBottom: 2,
   },
 };
 
-function Quote({ body, name, role }: Testimonial) {
+function Quote({ body, name, role, image }: Testimonial) {
   return (
     <div style={styles.quote}>
       <p style={styles.body}>{body}</p>
       <div style={styles.who}>
-        <div style={styles.avatar} />
+        <div style={styles.avatar}>
+          <Image
+            src={image}
+            alt={name}
+            width={36}
+            height={36}
+            style={{ borderRadius: '50%' }}
+          />
+        </div>
         <div>
           <div style={styles.name}>{name}</div>
           <div style={styles.role}>{role}</div>
@@ -81,25 +95,28 @@ function Quote({ body, name, role }: Testimonial) {
 
 export function Testimonials() {
   return (
-    <section className="container" style={styles.section}>
-      <p className="section-eyebrow">What people say</p>
-      <h2 className="section-title">
-        {RECOMMENDATIONS_TOTAL} recommendations on LinkedIn. Two of them:
+    <section className='container' style={styles.section}>
+      <p className='section-eyebrow'>What people say</p>
+      <h2 className='section-title'>
+        {RECOMMENDATIONS_TOTAL} recommendations on LinkedIn. Two of
+        them:
       </h2>
-      <div className="testimonials-grid">
+      <div className='testimonials-grid'>
         {testimonials.map((t) => (
           <Quote key={t.name} {...t} />
         ))}
       </div>
       <div style={styles.more}>
         <div style={styles.count}>
-          <strong style={styles.countStrong}>{RECOMMENDATIONS_MORE}</strong>{" "}
+          <strong style={styles.countStrong}>
+            {RECOMMENDATIONS_MORE}
+          </strong>{' '}
           more on LinkedIn
         </div>
         <a
           href={recommendationsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          target='_blank'
+          rel='noopener noreferrer'
           style={styles.link}
         >
           Read all {RECOMMENDATIONS_TOTAL} →
@@ -108,3 +125,4 @@ export function Testimonials() {
     </section>
   );
 }
+
